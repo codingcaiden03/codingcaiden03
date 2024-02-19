@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xStartingOffset: 50
-  maxYVelocity: 2
+  maxYVelocity: 2.5
+  xVelocity: 2
 --- !u!212 &5786212998763462239
 SpriteRenderer:
   m_ObjectHideFlags: 0

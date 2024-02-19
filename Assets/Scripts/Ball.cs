@@ -5,10 +5,10 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField] int xStartingOffset = 50;
-    [SerializeField] float maxYVelocity = 2f;
+    [SerializeField] float maxYVelocity = 2.5f;
 
-    int xVelocity = 1;
-    float yVelocity = -1;
+    [SerializeField] float xVelocity = 2;
+    float yVelocity = -2;
 
     // Called by PhysicsManager each FixedUpdate
     public void Move()
@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour
 
     public void SetXVelocity(int sign)
     {
-        xVelocity = (int)Mathf.Sign(sign);
+        xVelocity = 2 * Mathf.Sign(sign);
     }
 
     public void FlipYVelocity()
@@ -34,18 +34,40 @@ public class Ball : MonoBehaviour
     // Input Paddle's y-coord center point
     public void SetYVelocity(int paddleCenter)
     {
-        int ballCenter = 2 + (int)transform.position.y;
+        float ballCenter = 2 + transform.position.y;
 
-        yVelocity = (ballCenter - paddleCenter) / 3;
+        print("paddle: " + paddleCenter + ", ball: " + ballCenter);
 
-        if (yVelocity > maxYVelocity)
+        yVelocity = (float)(ballCenter - paddleCenter) / 3f;
+
+        float offset = Mathf.Abs(ballCenter - paddleCenter);
+        float sign = Mathf.Sign(ballCenter - paddleCenter);
+        switch (offset)
         {
-            yVelocity = maxYVelocity;
+            case < 3f:
+                yVelocity = 0 * sign;
+                break;
+            case < 4f:
+                yVelocity = 0.5f * sign;
+                break;
+            case < 5f:
+                yVelocity = 1f * sign;
+                break;
+            case < 6f:
+                yVelocity = 1.5f * sign;
+                break;
+            case < 7f:
+                yVelocity = 2f * sign;
+                break;
+            case < 9f:
+                yVelocity = 2.5f * sign;
+                break;
+            default:
+                yVelocity = 3f * sign;
+                break;
         }
-        else if (yVelocity < maxYVelocity)
-        {
-            yVelocity = -maxYVelocity;
-        }
+
+        print("yVelocity = " + yVelocity);
     }
 
     // Input player who scored to decide starting direction
