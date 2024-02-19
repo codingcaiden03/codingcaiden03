@@ -5,10 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     Score score;
+    Ball ball;
 
     void Start()
     {
         score = FindObjectOfType<Score>();
+        ball = FindObjectOfType<Ball>();
     }
 
     // Input player number who scored
@@ -19,13 +21,13 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
-        // Reset Ball Position
+        ball.ResetBallPosition(player);
     }
 
     void RestartGame()
     {
         score.ResetScore();
 
-        // Reset Ball Position
+        ball.ResetBallPosition(1);
     }
 }
