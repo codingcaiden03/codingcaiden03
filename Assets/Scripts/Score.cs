@@ -14,50 +14,51 @@ public class Score : MonoBehaviour
     // Input player number of who scored, returns TRUE if game is over
     public bool IncreaseScore(int player)
     {
-        if (player == 1)
-        {
-            player1Score++;
-        }
-        else
-        {
-            player2Score++;
-        }
+        HideCurrentScore();
 
-        UpdateScoreDisplay();
-
-        if (player1Score >= 10 || player2Score >= 10)
+        if ((1 + player1Score) >= 10 || (1 + player2Score) >= 10)
         {
             return true;
         }
+        else
+        {
+            if (player == 1)
+            {
+                player1Score++;
+            }
+            else
+            {
+                player2Score++;
+            }
 
-        return false;
+            DisplayCurrentScore();
+            return false;
+        }
     }
 
     // Reset score when game ends
     public void ResetScore()
     {
+        HideCurrentScore();
+
         player1Score = 0;
         player2Score = 0;
 
-        UpdateScoreDisplay();
+        DisplayCurrentScore();
+    }
+
+    void HideCurrentScore()
+    {
+        // Deactivate previous score values for P1 and P2
+        player1Display[player1Score].SetActive(false);
+        player2Display[player2Score].SetActive(false);
     }
 
     // Updates score counter in-game
-    void UpdateScoreDisplay()
+    void DisplayCurrentScore()
     {
-        // Deactivate all score values for P1 and P2
-        for (int i = 0; i < player1Display.Count; i++)
-        {
-            player1Display[i].SetActive(false);
-        }
-
-        for (int i = 0; i < player2Display.Count; i++)
-        {
-            player2Display[i].SetActive(false);
-        }
-
-        // Activate only current score value for P1 and P2
+        // Activate only current score values for P1 and P2
         player1Display[player1Score].SetActive(true);
-        player1Display[player2Score].SetActive(true);
+        player2Display[player2Score].SetActive(true);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField] int xStartingOffset = 50;
-    [SerializeField] float maxYVelocity = 2.5f;
+    [SerializeField] float maxYVelocity = 2f;
 
     int xVelocity = 1;
     float yVelocity = -1;
