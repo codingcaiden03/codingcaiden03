@@ -11,8 +11,8 @@ public class Score : MonoBehaviour
     [SerializeField] List<GameObject> player1Display;
     [SerializeField] List<GameObject> player2Display;
 
-    // Input player number of who scored
-    public void IncreaseScore(int player)
+    // Input player number of who scored, returns TRUE if game is over
+    public bool IncreaseScore(int player)
     {
         if (player == 1)
         {
@@ -22,6 +22,22 @@ public class Score : MonoBehaviour
         {
             player2Score++;
         }
+
+        UpdateScoreDisplay();
+
+        if (player1Score >= 10 || player2Score >= 10)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    // Reset score when game ends
+    public void ResetScore()
+    {
+        player1Score = 0;
+        player2Score = 0;
 
         UpdateScoreDisplay();
     }

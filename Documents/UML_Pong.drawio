@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-19T00:31:12.620Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0" etag="xFTucAd5ZGGsVxgNhZHj" version="23.1.5" type="device">
+<mxfile host="app.diagrams.net" modified="2024-02-19T00:48:18.697Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0" etag="IkqagZ3jowoKv0406RbU" version="23.1.5" type="device">
   <diagram name="Page-1" id="hOQSt2M8NXj7ab4ly8Tu">
     <mxGraphModel dx="2074" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -92,7 +92,7 @@
           <mxGeometry y="68" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="CWXw3qoEPfl9kFRMAjqj-31" value="&lt;div&gt;Score&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="620" y="250" width="170" height="140" as="geometry" />
+          <mxGeometry x="620" y="245" width="170" height="150" as="geometry" />
         </mxCell>
         <mxCell id="CWXw3qoEPfl9kFRMAjqj-32" value="&lt;div&gt;- player1Score&lt;/div&gt;&lt;div&gt;- player2Score&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="CWXw3qoEPfl9kFRMAjqj-31" vertex="1">
           <mxGeometry y="26" width="170" height="34" as="geometry" />
@@ -100,8 +100,8 @@
         <mxCell id="CWXw3qoEPfl9kFRMAjqj-33" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="CWXw3qoEPfl9kFRMAjqj-31" vertex="1">
           <mxGeometry y="60" width="170" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="CWXw3qoEPfl9kFRMAjqj-34" value="&lt;div&gt;+ InceaseScore(void): int (1, 2)&lt;/div&gt;&lt;div&gt;- UpdateScoreDisplay(void): int (1, 2)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="CWXw3qoEPfl9kFRMAjqj-31" vertex="1">
-          <mxGeometry y="68" width="170" height="72" as="geometry" />
+        <mxCell id="CWXw3qoEPfl9kFRMAjqj-34" value="&lt;div&gt;+ InceaseScore(void): int (1, 2)&lt;/div&gt;&lt;div&gt;+ ResetScore(void)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- UpdateScoreDisplay(void): int (1, 2)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="CWXw3qoEPfl9kFRMAjqj-31" vertex="1">
+          <mxGeometry y="68" width="170" height="82" as="geometry" />
         </mxCell>
         <mxCell id="CWXw3qoEPfl9kFRMAjqj-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CWXw3qoEPfl9kFRMAjqj-36" target="CWXw3qoEPfl9kFRMAjqj-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
