@@ -17,11 +17,16 @@ public class PaddleMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Move();
+    }
+
+    void Move()
+    {
         if (isRightPaddle)
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                this.transform.position = new Vector3(transform.position.x , transform.position.y + movespeed);
+                this.transform.position = new Vector3(transform.position.x, transform.position.y + movespeed);
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
