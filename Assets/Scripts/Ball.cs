@@ -5,7 +5,6 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField] int xStartingOffset = 50;
-    [SerializeField] float maxYVelocity = 2.5f;
 
     [SerializeField] float xVelocity = 2;
     float yVelocity = -2;
@@ -36,8 +35,6 @@ public class Ball : MonoBehaviour
     {
         float ballCenter = 2 + transform.position.y;
 
-        print("paddle: " + paddleCenter + ", ball: " + ballCenter);
-
         yVelocity = (float)(ballCenter - paddleCenter) / 3f;
 
         float offset = Mathf.Abs(ballCenter - paddleCenter);
@@ -66,8 +63,6 @@ public class Ball : MonoBehaviour
                 yVelocity = 3f * sign;
                 break;
         }
-
-        print("yVelocity = " + yVelocity);
     }
 
     // Input player who scored to decide starting direction
