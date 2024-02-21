@@ -98,4 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Center: {fileID: 6462798345176362507, guid: 5fe0f8ef4fa7bd546966c49de2033197, type: 3}
-  movespeed: 2
+  movespeed: 2.5
