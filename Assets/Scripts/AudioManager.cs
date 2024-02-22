@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Range(0, 1)] [SerializeField] float volume;
+    [SerializeField] AudioClip bounceSFX;
+    [SerializeField] AudioClip scoreSFX;
+
+    AudioSource audioSource;
+
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayBounceSFX()
     {
-        
+        audioSource.PlayOneShot(bounceSFX, volume);
+    }
+
+    public void PlayScoreSFX()
+    {
+        audioSource.PlayOneShot(scoreSFX, volume);
     }
 }
