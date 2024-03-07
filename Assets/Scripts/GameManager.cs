@@ -2,32 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author: Caiden Herbert
+
 public class GameManager : MonoBehaviour
 {
     Score score;
     Ball ball;
-
-    void Start()
+    void Start() 
     {
-        score = FindObjectOfType<Score>();
         ball = FindObjectOfType<Ball>();
+        score = FindObjectOfType<Score>();
     }
-
-    // Input player number who scored
-    public void HandleScore(int player)
+    public void ScoreChanged(int 1, int 2) 
     {
-        if (score.IncreaseScore(player))
-        {
+        if(Score.IncreaseScore) {
             RestartGame();
         }
-
-        ball.ResetBallPosition(player);
+        Ball.ResetBallPosition();
     }
-
     void RestartGame()
     {
-        score.ResetScore();
-
-        ball.ResetBallPosition(1);
+        Score.ResetScore();
+        Ball.ResetBallPostion();
     }
 }
